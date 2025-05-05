@@ -1,3 +1,5 @@
+const fs = require('fs').promises
+
 class User {
     id
     name
@@ -31,4 +33,13 @@ const borrow = (id) => {
     }
     throw new Error("user not found")
 }
-module.exports = { print, borrow }
+async function initUsers() {
+    try {
+        const data = JSON.stringify(users, null, 2)
+        await fs.writeFile('./users.json', data, 'utf8')
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+module.exports = { print, borrow, initUsers }

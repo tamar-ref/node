@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 class Book {
     id
     name
@@ -31,4 +33,13 @@ const borrow = (id) => {
     }
     throw new Error("book not found")
 }
-module.exports = { print, borrow }
+function initBooks() {
+    try {
+        const data = JSON.stringify(books, null, 2)
+        fs.writeFileSync('./books.json', data, 'utf8')
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+module.exports = { print, borrow, initBooks }

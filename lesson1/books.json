@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "book1",
+    "type": "action",
+    "isBorrowed": false
+  },
+  {
+    "id": 2,
+    "name": "book2",
+    "type": "drama",
+    "isBorrowed": true
+  },
+  {
+    "id": 3,
+    "name": "book3",
+    "type": "action",
+    "isBorrowed": false
+  }
+]
